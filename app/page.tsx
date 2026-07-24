@@ -1,12 +1,36 @@
 const services = [
-  { number: "01", title: "Certified Arborists", description: "Knowledgeable, on-site guidance from consultation through cleanup." },
-  { number: "02", title: "Tree Pruning", description: "Thoughtful pruning plans shaped around the health and structure of each tree." },
-  { number: "03", title: "Tree Removal", description: "Careful removal of hazardous, damaged, or unwanted trees, including the stump." },
-  { number: "04", title: "Tree Inspections", description: "Clear, practical assessments that help you understand risk from root to canopy." },
-  { number: "05", title: "Crane Services", description: "Safety-led crane support for large trees and technically complex removals." },
-  { number: "06", title: "Spider Lift Services", description: "Low-impact access for tight spaces where traditional equipment cannot safely go." },
-  { number: "07", title: "Ornamental Pruning", description: "Detailed care for small trees and shrubs that protects their natural form." },
-  { number: "08", title: "Emergency Response", description: "Responsive support for storm damage and urgent tree hazards, day or night." },
+  {
+    title: "Tree Pruning",
+    text: "Selective canopy care that improves safety, airflow, structure, and curb appeal without stripping the tree of its natural shape.",
+    image: "/images/arborist-pruning.jpg",
+  },
+  {
+    title: "Safe Removal",
+    text: "Planned removals for dead, storm-damaged, leaning, or crowded trees with controlled rigging and careful cleanup.",
+    image: "/images/tree-crew.jpg",
+  },
+  {
+    title: "Certified Inspections",
+    text: "On-site arborist assessments for pests, decay, limb risk, construction stress, and long-term tree-health decisions.",
+    image: "/images/arborist-climbing.jpg",
+  },
+  {
+    title: "Emergency Response",
+    text: "Fast help after high winds, split trunks, broken limbs, and urgent hazards around homes, drives, and utilities.",
+    image: "/images/tree-crew.jpg",
+  },
+];
+
+const processSteps = [
+  ["01", "Walk the property", "We listen first, inspect the tree from root flare to canopy, and explain what is happening in plain language."],
+  ["02", "Design the safest plan", "Every job gets the right access method, crew size, equipment, and protection plan for the surrounding landscape."],
+  ["03", "Finish clean", "The work is not complete until the site is tidy, the next steps are clear, and your property is ready to enjoy."],
+];
+
+const gallery = [
+  { src: "/images/tree-crew.jpg", alt: "Tree-care crew working beside a residential landscape", label: "Residential tree care" },
+  { src: "/images/arborist-pruning.jpg", alt: "Arborist pruning a mature tree from the canopy", label: "Canopy pruning" },
+  { src: "/images/arborist-climbing.jpg", alt: "Certified arborist secured in a mature tree", label: "Certified climbing" },
 ];
 
 export default function Home() {
@@ -14,113 +38,143 @@ export default function Home() {
     <main>
       <header className="site-header">
         <a className="brand" href="#top" aria-label="Tri-County Tree Services home">
-          <span className="brand-mark" aria-hidden="true">T</span>
+          <span className="brand-mark" aria-hidden="true">TC</span>
           <span><strong>Tri-County</strong><small>Tree Services</small></span>
         </a>
-        <div className="header-call">
-          <span>24-hour emergency service</span>
-          <a href="tel:+16303732554">630 373 2554</a>
-        </div>
         <nav className="desktop-nav" aria-label="Main navigation">
-          <a href="#services">Services</a><a href="#about">Our mission</a><a href="#arborist">Why certified</a>
-          <a className="nav-cta" href="#contact">Request a consultation</a>
+          <a href="#services">Services</a>
+          <a href="#process">Process</a>
+          <a href="#gallery">Work</a>
+          <a href="#contact">Contact</a>
         </nav>
+        <a className="header-phone" href="tel:+16303732554"><span>24/7 emergency</span>630 373 2554</a>
         <details className="mobile-nav">
-          <summary aria-label="Open navigation">Menu</summary>
-          <div><a href="#services">Services</a><a href="#about">Our mission</a><a href="#arborist">Why certified</a><a href="#contact">Request a consultation</a></div>
+          <summary aria-label="Open navigation"><span></span><span></span><span></span></summary>
+          <div><a href="#services">Services</a><a href="#process">Process</a><a href="#gallery">Work</a><a href="#contact">Contact</a></div>
         </details>
       </header>
 
       <section className="hero" id="top">
-        <div className="hero-copy">
-          <p className="eyebrow">Local expertise. Lasting care.</p>
-          <h1>Professional<br />solutions,<br /><span>integrity first.</span></h1>
-          <p className="hero-intro">Safe, thoughtful tree care built around your property, your priorities, and the long-term health of your landscape.</p>
-          <div className="button-row">
-            <a className="button button-primary" href="#contact">Get a free consultation</a>
-            <a className="text-link light" href="#services">Explore our services <span aria-hidden="true">→</span></a>
+        <div className="hero-media" aria-hidden="true">
+          <img src="/images/tree-crew.jpg" alt="" />
+        </div>
+        <div className="hero-panel reveal">
+          <p className="kicker">Certified arborist care</p>
+          <h1>Landscape-safe tree service with a modern, careful touch.</h1>
+          <p className="hero-copy">Pruning, removals, inspections, crane access, and storm response shaped around your trees, your home, and the landscape you want to protect.</p>
+          <div className="hero-actions">
+            <a className="button primary" href="#contact">Book a consultation</a>
+            <a className="button ghost" href="#services">View services</a>
           </div>
         </div>
-        <div className="hero-visual" aria-label="Professional tree-care crew at work">
-          <img src="/images/tree-crew.jpg" alt="Professional tree-care crew working beside arborist equipment" />
-          <div className="hero-note"><strong>20+</strong><span>years of hands-on tree-care experience</span></div>
+        <div className="hero-card reveal delay-one">
+          <strong>20+</strong>
+          <span>years of practical tree-care experience across DuPage County</span>
+        </div>
+        <div className="hero-leaf" aria-hidden="true"></div>
+      </section>
+
+      <section className="intro section-pad">
+        <div className="intro-label reveal">Garden-minded tree care</div>
+        <div className="intro-copy reveal delay-one">
+          <h2>Thoughtful tree care that protects the whole landscape.</h2>
+          <p>Your property deserves more than a quick cut. We plan tree work around access, safety, plant health, and the gardens, lawns, and structures surrounding every branch.</p>
         </div>
       </section>
 
-      <section className="intro section-shell" id="about">
-        <div className="section-heading"><p className="eyebrow green">Who we are</p><h2>Better care for the places you live.</h2></div>
-        <div className="intro-copy">
-          <p>Your property is more than a job site. It is where life happens. That is why every recommendation starts with listening, a careful on-site assessment, and a plan tailored to the trees and people involved.</p>
-          <p>From routine pruning to complex removals, the same certified professional stays accountable for clear communication, safe work, and a clean finish.</p>
-          <a className="text-link" href="#contact">Meet us on your property <span aria-hidden="true">→</span></a>
-        </div>
-      </section>
-
-      <section className="services section-shell" id="services">
-        <div className="services-top">
-          <div><p className="eyebrow green">Tree care, made personal</p><h2>One trusted team for every branch of the job.</h2></div>
-          <p>Practical answers, well-maintained equipment, and solutions chosen for your property—not a one-size-fits-all checklist.</p>
+      <section className="services section-pad" id="services">
+        <div className="section-head reveal">
+          <p className="kicker dark">What we do</p>
+          <h2>Complete tree care for healthy, safer outdoor spaces.</h2>
         </div>
         <div className="service-grid">
-          {services.map((service) => (
-            <article className="service-card" key={service.number}>
-              <span className="service-number">{service.number}</span><h3>{service.title}</h3><p>{service.description}</p>
-              <a href="#contact" aria-label={"Ask about " + service.title}>Ask about this service <span aria-hidden="true">→</span></a>
+          {services.map((service, index) => (
+            <article className="service-card reveal" style={{ "--i": index } as React.CSSProperties} key={service.title}>
+              <div className="service-image"><img src={service.image} alt="" /></div>
+              <div className="service-body">
+                <span>{String(index + 1).padStart(2, "0")}</span>
+                <h3>{service.title}</h3>
+                <p>{service.text}</p>
+                <a href="#contact" aria-label={"Ask about " + service.title}>Request service</a>
+              </div>
             </article>
           ))}
         </div>
       </section>
 
-      <section className="proof">
-        <div className="proof-image"><img src="/images/arborist-pruning.jpg" alt="Arborist pruning a mature tree from the canopy" /></div>
-        <div className="proof-copy">
-          <p className="eyebrow mint">Safety and satisfaction</p><h2>Experience that reaches the right solution.</h2>
-          <p>Strong tree work is equal parts planning, judgment, and execution. Our work begins with the safest approach and ends only when your property is ready to enjoy again.</p>
-          <div className="stats"><div><strong>20+</strong><span>Years in the industry</span></div><div><strong>24/7</strong><span>Emergency availability</span></div><div><strong>1:1</strong><span>Owner-led consultation</span></div></div>
+      <section className="feature-band">
+        <div className="feature-image reveal"><img src="/images/arborist-pruning.jpg" alt="Arborist pruning a mature tree" /></div>
+        <div className="feature-copy reveal delay-one">
+          <p className="kicker">Why certified care matters</p>
+          <h2>Every cut should have a reason.</h2>
+          <p>Certified arborist guidance keeps the work focused on tree biology, site safety, and long-term landscape health. You get recommendations that are practical, honest, and specific to the condition of each tree.</p>
+          <div className="metric-row">
+            <div><strong>24/7</strong><span>Emergency availability</span></div>
+            <div><strong>1:1</strong><span>Owner-led guidance</span></div>
+            <div><strong>Clean</strong><span>Respectful job sites</span></div>
+          </div>
         </div>
       </section>
 
-      <section className="arborist section-shell" id="arborist">
-        <div className="arborist-copy">
-          <p className="eyebrow green">Certified expertise</p><h2>What does a certified arborist bring to your property?</h2>
-          <p>Certified arborists pair real-world experience with ongoing education in tree biology, diagnosis, safety, and responsible care. That means recommendations consider the whole tree—not just the most visible symptom.</p>
-          <p>You receive a clearer explanation of the options, an honest view of risk, and work designed to protect both the tree and the space around it.</p>
-          <a className="button button-dark" href="#contact">Talk with an arborist</a>
+      <section className="process section-pad" id="process">
+        <div className="section-head split reveal">
+          <p className="kicker dark">How it works</p>
+          <h2>A calm, organized process from first call to final cleanup.</h2>
         </div>
-        <div className="arborist-image"><img src="/images/arborist-climbing.jpg" alt="Certified arborist secured in a mature tree" /><span className="image-caption">Knowledge in your canopy</span></div>
+        <div className="process-grid">
+          {processSteps.map(([number, title, text]) => (
+            <article className="process-card reveal" key={number}>
+              <span>{number}</span>
+              <h3>{title}</h3>
+              <p>{text}</p>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="gallery" id="gallery">
+        <div className="gallery-head reveal">
+          <p className="kicker dark">Field work</p>
+          <h2>Skilled crews, clean job sites, and work you can feel confident about.</h2>
+        </div>
+        <div className="gallery-track">
+          {gallery.map((item) => (
+            <figure className="gallery-item reveal" key={item.label}>
+              <img src={item.src} alt={item.alt} />
+              <figcaption>{item.label}</figcaption>
+            </figure>
+          ))}
+        </div>
       </section>
 
       <section className="contact" id="contact">
-        <div className="contact-info">
-          <p className="eyebrow mint">Start with a conversation</p><h2>Let&apos;s take a look at your trees.</h2>
-          <p>Tell us what is happening and we will help you choose the right next step. Existing and future clients can call at any hour for emergency service.</p>
+        <div className="contact-copy reveal">
+          <p className="kicker">Start with a conversation</p>
+          <h2>Let&apos;s take a careful look at your trees.</h2>
+          <p>Call any hour for storm concerns, or send a consultation request for pruning, removal, inspection, crane service, spider lift access, or ornamental care.</p>
           <div className="contact-list">
-            <div><span>Call</span><a href="tel:+16303732554">630 373 2554</a></div>
-            <div><span>Email</span><a href="mailto:admin@tri-countytreeservices.com">admin@tri-countytreeservices.com</a></div>
-            <div><span>Service area</span><p>DuPage County, Illinois and surrounding communities</p></div>
+            <a href="tel:+16303732554"><span>Call</span>630 373 2554</a>
+            <a href="mailto:admin@tri-countytreeservices.com"><span>Email</span>admin@tri-countytreeservices.com</a>
+            <p><span>Service area</span>DuPage County, Illinois and nearby communities</p>
           </div>
         </div>
-        <form className="contact-form" action="mailto:admin@tri-countytreeservices.com" method="post" encType="text/plain">
-          <div className="form-heading"><span>Consultation request</span><strong>How can we help?</strong></div>
+        <form className="contact-form reveal delay-one" action="mailto:admin@tri-countytreeservices.com" method="post" encType="text/plain">
+          <div className="form-top"><span>Appointment request</span><strong>Tell us what you need.</strong></div>
           <div className="form-grid">
             <label>First name<input name="first-name" type="text" autoComplete="given-name" required /></label>
             <label>Last name<input name="last-name" type="text" autoComplete="family-name" required /></label>
           </div>
-          <label>Phone number<input name="phone" type="tel" autoComplete="tel" required /></label>
-          <label>Email address<input name="email" type="email" autoComplete="email" required /></label>
-          <label>What do you need help with?<textarea name="project" rows={4} placeholder="Pruning, removal, inspection, storm damage..." required /></label>
-          <button className="button button-primary" type="submit">Send consultation request</button>
-          <p className="form-note">Submitting opens your email app so you can review the message before sending.</p>
+          <label>Phone<input name="phone" type="tel" autoComplete="tel" required /></label>
+          <label>Email<input name="email" type="email" autoComplete="email" required /></label>
+          <label>Project details<textarea name="project" rows={4} placeholder="Tree pruning, removal, inspection, storm damage..." required /></label>
+          <button className="button primary" type="submit">Send request</button>
         </form>
       </section>
 
       <footer>
-        <div className="footer-main">
-          <div className="brand footer-brand"><span className="brand-mark" aria-hidden="true">T</span><span><strong>Tri-County</strong><small>Tree Services</small></span></div>
-          <p>Certified tree care delivered with safety, transparency, and respect for your property.</p>
-          <div className="footer-links"><a href="#services">Services</a><a href="#about">Our mission</a><a href="#arborist">Why certified</a><a href="#contact">Contact</a></div>
-        </div>
-        <div className="footer-bottom"><span>© 2026 Tri-County Tree Services</span><a href="tel:+16303732554">24-hour emergency line: 630 373 2554</a></div>
+        <div className="brand footer-brand"><span className="brand-mark" aria-hidden="true">TC</span><span><strong>Tri-County</strong><small>Tree Services</small></span></div>
+        <p>Certified tree care delivered with safety, clarity, and respect for every property.</p>
+        <a href="tel:+16303732554">24-hour emergency line: 630 373 2554</a>
       </footer>
     </main>
   );
