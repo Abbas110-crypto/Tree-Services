@@ -1,32 +1,35 @@
 import type { Metadata } from "next";
-import { headers } from "next/headers";
+import { Archivo, Public_Sans } from "next/font/google";
 import "./globals.css";
 
-export async function generateMetadata(): Promise<Metadata> {
-  const requestHeaders = await headers();
-  const host = requestHeaders.get("x-forwarded-host") ?? requestHeaders.get("host") ?? "localhost";
-  const protocol = requestHeaders.get("x-forwarded-proto") ?? (host.startsWith("localhost") ? "http" : "https");
-  const origin = protocol + "://" + host;
+const archivo = Archivo({
+  subsets: ["latin"],
+  variable: "--font-display",
+  weight: ["500", "600", "700"],
+});
 
-  return {
-    metadataBase: new URL(origin),
-    title: { default: "Tri-County Tree Services | Certified Tree Care", template: "%s | Tri-County Tree Services" },
-    description: "Certified, owner-led tree care for DuPage County, Illinois, including pruning, removal, inspections, crane services, and emergency response.",
-    openGraph: {
-      title: "Tri-County Tree Services",
-      description: "Professional tree solutions, integrity first. Certified care for every branch of the job.",
-      type: "website",
-      images: [{ url: origin + "/og.png", width: 1536, height: 900, alt: "Tri-County Tree Services — Professional solutions, integrity first." }],
-    },
-    twitter: {
-      card: "summary_large_image",
-      title: "Tri-County Tree Services",
-      description: "Professional tree solutions, integrity first. Certified care for every branch of the job.",
-      images: [origin + "/og.png"],
-    },
-  };
-}
+const publicSans = Public_Sans({
+  subsets: ["latin"],
+  variable: "--font-sans",
+  weight: ["400", "500", "600", "700"],
+});
 
-export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
-  return <html lang="en"><body>{children}</body></html>;
+export const metadata: Metadata = {
+  title: "Tree Removal & Pruning in DuPage County | Tri-County Tree Services",
+  description:
+    "ISA Certified arborists in DuPage County, IL. Free estimates, 24-hour emergency tree removal, expert pruning, crane and stump work.",
+};
+
+export default function RootLayout({
+  children,
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
+  return (
+    <html lang="en">
+      <body className={`${archivo.variable} ${publicSans.variable}`}>
+        {children}
+      </body>
+    </html>
+  );
 }
