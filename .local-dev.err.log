@@ -1,0 +1,31 @@
+[2mDefault inspector port 9229 not available, using 9231 instead
+[22m
+(node:20036) ExperimentalWarning: glob is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+[2m4:29:44 AM[22m [31m[1m[vite][22m[39m [31mInternal server error: [postcss] C:/Users/UNI-TECH/OneDrive/Documents/Green Energy/app/globals.css:1:23: Unknown word `r`n[39m
+      at runInRunnerObject (workers/runner-worker/index.js:107:3)
+      at getWorkerEntryExport (workers/runner-worker/index.js:235:17)
+      at null.<anonymous> (workers/runner-worker/index.js:354:24)
+      at maybeCaptureError (workers/runner-worker/index.js:51:10)
+[2m4:33:50 AM[22m [31m[1m[vite][22m[39m [31mInternal server error: EBUSY: resource busy or locked, open 'C:\Users\UNI-TECH\OneDrive\Documents\Green Energy\app\page.tsx'[39m
+      at runInRunnerObject (workers/runner-worker/index.js:107:3)
+      at getWorkerEntryExport (workers/runner-worker/index.js:235:17)
+      at null.<anonymous> (workers/runner-worker/index.js:354:24)
+      at maybeCaptureError (workers/runner-worker/index.js:51:10)
+[2m4:33:51 AM[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [2m[console.error] [22m[vinext] RSC HMR error: Error: Connection closed.
+    at close (http://localhost:3002/node_modules/.vite/deps/react-server-dom-webpack_client__browser.js?v=7b96c16a:2364:36)
+    at progress (http://localhost:3002/node_modules/.vite/deps/react-server-dom-webpack_client__browser.js?v=7b96c16a:2437:28)
+[2m4:43:52 AM[22m [31m[1m[vite][22m[39m [31mInternal server error: EBUSY: resource busy or locked, open 'C:\Users\UNI-TECH\OneDrive\Documents\Green Energy\app\page.tsx'[39m
+      at runInRunnerObject (workers/runner-worker/index.js:107:3)
+      at getWorkerEntryExport (workers/runner-worker/index.js:235:17)
+      at null.<anonymous> (workers/runner-worker/index.js:354:24)
+      at maybeCaptureError (workers/runner-worker/index.js:51:10)
+[2m4:43:52 AM[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [2m[console.error] [22m[vinext] RSC HMR error: Error: Connection closed.
+    at close (http://localhost:3002/node_modules/.vite/deps/react-server-dom-webpack_client__browser.js?v=7b96c16a:2364:36)
+    at progress (http://localhost:3002/node_modules/.vite/deps/react-server-dom-webpack_client__browser.js?v=7b96c16a:2437:28)
+[2m4:44:04 AM[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [2m[console.error] [22m[vinext] RSC HMR error: Error: Connection closed.
+    at close (http://localhost:3002/node_modules/.vite/deps/react-server-dom-webpack_client__browser.js?v=7b96c16a:2364:36)
+    at progress (http://localhost:3002/node_modules/.vite/deps/react-server-dom-webpack_client__browser.js?v=7b96c16a:2437:28)
+[2m4:44:46 AM[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [2m[console.error] [22m[vinext] RSC HMR error: Error: Connection closed.
+    at close (http://localhost:3002/node_modules/.vite/deps/react-server-dom-webpack_client__browser.js?v=7b96c16a:2364:36)
+    at progress (http://localhost:3002/node_modules/.vite/deps/react-server-dom-webpack_client__browser.js?v=7b96c16a:2437:28)
